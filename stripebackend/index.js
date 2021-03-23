@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 //payment code for the checkout without popup
 
 app.post("/payment", cors(), async (req, res) => {
-	let { amount, id } = req.body
+	let { amount, id, currency } = req.body
 	try {
 		const payment = await stripe.paymentIntents.create({
 			amount,
